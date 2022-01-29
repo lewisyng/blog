@@ -1,0 +1,29 @@
+.header__wrapper {
+  @apply 
+    flex 
+    justify-center
+    shadow-[0_4px_12px_0_rgba(0,0,0,0.05)];
+}
+
+.header {
+  @apply 
+    relative 
+    flex
+    max-w-[1200px]
+    items-center
+    left-0
+    w-full 
+    py-5;
+}
+
+.header__actions {
+  @apply flex gap-4 ml-auto;
+}
+
+.header__actions > * {
+  @apply fill-[#757575] cursor-pointer;
+}
+
+.header__logo img {
+  height: 25px;
+}

@@ -1,0 +1,3 @@
+.storyList__item {
+    @apply flex justify-between my-8;
+}

@@ -1,0 +1,11 @@
+.heading[data-type="h2"] {
+    @apply font-bold text-[22px] leading-7;
+}
+
+.heading[data-type="h5"] {
+    @apply font-bold text-[15px];
+}
+
+.heading[data-type="h6"] {
+    @apply font-bold text-[13px];
+}
