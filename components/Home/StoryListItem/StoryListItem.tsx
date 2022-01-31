@@ -19,7 +19,7 @@ export const StoryListItem = () => {
 
         <Text>Why You Should Choose CSS Libraries Instead of Vanilla CSS</Text>
 
-        <div className="mt-2 flex gap-3 !text-[13px]">
+        <div className="mt-2 flex items-center gap-3 !text-[13px]">
           <Text>Oct 14, 2021</Text>·<Text>5 min read</Text>·<Badge>CSS</Badge>
           <Icon src="/icons/read.png" />
           <Icon src="/icons/read.png" />

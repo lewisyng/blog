@@ -9,3 +9,7 @@
 .heading[data-type="h6"] {
     @apply font-bold text-[13px];
 }
+
+.heading[data-type="p"] {
+    @apply text-[14px] text-[#292929];
+}

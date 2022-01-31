@@ -1,3 +1,10 @@
+import styles from './MainWrapper.module.css'
+import cn from 'classnames'
+
 export const MainWrapper = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mx-auto flex max-w-[1200px]">{children}</div>
+  return (
+    <div className={cn(styles.main__wrapper, 'relative left-[87px]')}>
+      {children}
+    </div>
+  )
 }

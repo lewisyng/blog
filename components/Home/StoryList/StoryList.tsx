@@ -7,6 +7,10 @@ export const StoryList = () => {
             <StoryListItem />
             <StoryListItem />
             <StoryListItem />
+            <StoryListItem />
+            <StoryListItem />
+            <StoryListItem />
+            <StoryListItem />
         </div>
     )
 }

@@ -1,0 +1,7 @@
+.searchBar {
+    @apply border-[1px] px-3 py-2 rounded-full;
+}
+
+.searchBar__icon {
+    @apply mr-2;
+}
