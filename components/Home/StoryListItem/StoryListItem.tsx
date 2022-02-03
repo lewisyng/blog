@@ -4,8 +4,12 @@ import Text from '../../UI/Text/Text'
 import Heading from '../../UI/Heading/Heading'
 import Image from '../../UI/Image/Image'
 import styles from './StoryListItem.module.css'
+import { Post } from '../../../types'
+import Link from 'next/link'
 
-export const StoryListItem = () => {
+export const StoryListItem = ({ post }: { post: Post }) => {
+  const { title } = post
+
   return (
     <div className={styles.storyList__item}>
       <div className="storyListItem__content">
@@ -15,7 +19,7 @@ export const StoryListItem = () => {
           <Heading type="h6">June Redwood in Enlear Academy</Heading>
         </div>
 
-        <Heading type="h2">Bootstrap vs Tailwind vs Vanilla CSS</Heading>
+        <Heading type="h2">{title}</Heading>
 
         <Text>Why You Should Choose CSS Libraries Instead of Vanilla CSS</Text>
 
@@ -25,7 +29,11 @@ export const StoryListItem = () => {
           <Icon src="/icons/read.png" />
         </div>
       </div>
-      <Image src="/images/story.jpeg" height={134} width={200} />
+      <Link href={`/post/${post.slug.current}`}>
+        <div>
+        <Image src="/images/story.jpeg" height={134} width={200} />
+        </div>
+      </Link>
     </div>
   )
 }

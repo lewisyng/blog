@@ -1,18 +1,26 @@
 import Stories from '../Stories/Stories'
 import { Heading } from '../../UI/Heading/Heading'
-import LatestTopics from '../LatestTopics/LatestTopics';
+import LatestTopics from '../LatestTopics/LatestTopics'
+import { Post } from '../../../types'
 
-export const HomeMainContent = () => {
+export const HomeMainContent = ({ posts }: { posts: [Post] }) => {
   return (
-    <div className="home__content mt-[56px] w-[70%] border-r-2 pb-[4px] px-[140px]">
+    <div className="home__content mt-[56px] w-[70%] border-r-2 px-[140px] pb-[4px]">
       {/* <LatestTopics /> */}
       <Heading
         type="p"
-        className={['border-b', 'border-[#292929]', 'pb-[16px]', 'inline-block', 'cursor-pointer', 'font-medium']}
+        className={[
+          'border-b',
+          'border-[#292929]',
+          'pb-[16px]',
+          'inline-block',
+          'cursor-pointer',
+          'font-medium',
+        ]}
       >
         Recommended
       </Heading>
-      <Stories />
+      <Stories posts={posts} />
     </div>
   )
 }

@@ -1,18 +1,14 @@
-import StoryListItem from "../StoryListItem/StoryListItem"
+import { Post } from '../../../types'
+import StoryListItem from '../StoryListItem/StoryListItem'
 
-export const StoryList = () => {
-    return (
-        <div className="storyList mt-[2rem]">
-            <StoryListItem />
-            <StoryListItem />
-            <StoryListItem />
-            <StoryListItem />
-            <StoryListItem />
-            <StoryListItem />
-            <StoryListItem />
-            <StoryListItem />
-        </div>
-    )
+export const StoryList = ({ posts }: { posts: [Post] }) => {
+  return (
+    <div className="storyList mt-[2rem]">
+      {posts.map((post: Post) => {
+        return <StoryListItem key={post._id} post={post} />
+      })}
+    </div>
+  )
 }
 
 export default StoryList
