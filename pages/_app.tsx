@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation/Navigation'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={"main__wrapper"}>
+    <div>
       <Navigation />
       <Component {...pageProps} />
     </div>

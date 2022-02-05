@@ -1,3 +1,11 @@
 .main__wrapper {
-    @apply w-full;
+  @apply flex w-[calc(100%_-_var(--sidebar-width))];
+}
+
+.main__wrapper:nth-child(0) {
+  flex: 70%;
+}
+
+.main__wrapper:nth-child(1) {
+  flex-grow: 1;
 }

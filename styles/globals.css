@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+:root {
+  --sidebar-width: 87px;
+}
+
 .main__wrapper {
   @apply flex
         max-w-[1500px];

@@ -1,3 +1,5 @@
+import { parseISO } from "date-fns";
+
 export const PostHeader = ({
   author,
   publishDate,
@@ -5,10 +7,14 @@ export const PostHeader = ({
   author: string
   publishDate: string
 }) => {
+  const date = new Date(publishDate)
+  date.toISOString().substring(0, 10)
+  console.log("date", date);
   return (
-    <div>
-      <h1>{author}</h1>
-      <h2>{publishDate}</h2>
+    <div className="prose mx-auto">
+      <div>{author}</div>
+      <div>{publishDate}</div>
+      {/* <div>{parseISO(new Date(publishDate).toString())}</div> */}
     </div>
   )
 }

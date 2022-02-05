@@ -6,13 +6,15 @@ export const PostWrapper = ({
   children,
   author,
   publishDate,
+  className,
 }: {
   children: React.ReactNode
   author: string
   publishDate: string
+  className?: string
 }) => {
   return (
-    <div className={cn(styles.postWrapper, 'mt-[3.5rem]')}>
+    <div className={cn(className, styles.postWrapper, 'pt-[3.5rem]')}>
       <PostHeader author={author} publishDate={publishDate} />
       {children}
     </div>

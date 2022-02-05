@@ -3,19 +3,21 @@ import PostWrapper from '../../components/Post/Wrapper/PostWrapper'
 import { sanityClient } from '../../sanity'
 import { Richtext } from '../../components/Post/Richtext/Richtext'
 
-export const Post = ({ id, content }: { id: string; content: any }) => {
+export const Post = ({ content }: { content: any }) => {
   if (content) {
     return (
       <MainWrapper>
         <PostWrapper
           author={content[0].author.name}
           publishDate={content[0].publishedAt}
+          className={'w-[70%] border-r-2 pb-10'}
         >
-          <h1>
-            <strong>{content[0].title}</strong>
-          </h1>
+          <div className="prose mx-auto">
+            <h1>{content[0].title}</h1>
+          </div>
           <Richtext content={content} />
         </PostWrapper>
+        <div className={'flex-grow'}>Searchbar</div>
       </MainWrapper>
     )
   } else {
@@ -35,7 +37,6 @@ export const getStaticProps = async ({
 }: {
   params: { id: string }
 }) => {
-  console.log('params', params)
   const { id } = params
 
   const query = `
@@ -51,14 +52,10 @@ export const getStaticProps = async ({
     }
   `
 
-  console.log('query', query)
-
   const content = await sanityClient.fetch(query)
-  console.log('content', content)
 
   return {
     props: {
-      id,
       content,
     },
   }

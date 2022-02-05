@@ -5,7 +5,7 @@ import { Post } from '../../../types'
 
 export const HomeMainContent = ({ posts }: { posts: [Post] }) => {
   return (
-    <div className="home__content mt-[56px] w-[70%] border-r-2 px-[140px] pb-[4px]">
+    <div className="home__content mt-[56px] border-r-2 px-[140px] pb-[4px]">
       {/* <LatestTopics /> */}
       <Heading
         type="p"
