@@ -8,7 +8,7 @@ import { Post } from '../../../types'
 import Link from 'next/link'
 
 export const StoryListItem = ({ post }: { post: Post }) => {
-  const { title } = post
+  const { title, _id } = post
 
   return (
     <div className={styles.storyList__item}>
@@ -29,9 +29,14 @@ export const StoryListItem = ({ post }: { post: Post }) => {
           <Icon src="/icons/read.png" />
         </div>
       </div>
-      <Link href={`/post/${post.slug.current}`}>
+      <Link
+        href={{
+          pathname: `/post/[id]`,
+          query: {id: _id },
+        }}
+      >
         <div>
-        <Image src="/images/story.jpeg" height={134} width={200} />
+          <Image src="/images/story.jpeg" height={134} width={200} />
         </div>
       </Link>
     </div>

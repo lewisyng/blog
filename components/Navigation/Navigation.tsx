@@ -5,7 +5,7 @@ import Logo from '../UI/Logo/Logo'
 export const Navigation = () => {
   return (
     <div className={styles.navigation}>
-      <a href="" className={styles.navigation__logo}>
+      <a href="/" className={styles.navigation__logo}>
         <Logo />
       </a>
 
