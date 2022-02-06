@@ -12,6 +12,10 @@
   --sidebar-width: 87px;
 }
 
+h1 {
+  @apply !my-[2rem];
+}
+
 .main__wrapper {
   @apply flex
         max-w-[1500px];

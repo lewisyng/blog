@@ -12,7 +12,7 @@ export const StoryListItem = ({ post }: { post: Post }) => {
 
   return (
     <div className={styles.storyList__item}>
-      <div className="storyListItem__content">
+      <div className="storyListItem__content flex-grow">
         <div className="storyListItem__heading mb-2 flex items-center gap-3">
           <Icon src="/icons/read.png" height={20} width={20} />
 
@@ -32,11 +32,11 @@ export const StoryListItem = ({ post }: { post: Post }) => {
       <Link
         href={{
           pathname: `/post/[id]`,
-          query: {id: _id },
+          query: { id: _id },
         }}
       >
-        <div>
-          <Image src="/images/story.jpeg" height={134} width={200} />
+        <div className="ml-[60px]">
+          <Image src="/images/story.jpeg" width={200} />
         </div>
       </Link>
     </div>

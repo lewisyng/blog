@@ -8,11 +8,6 @@ import { Post } from '../types'
 export default function Home({ posts }: { posts: [Post] }) {
   return (
     <MainWrapper>
-      <Head>
-        <title>Blog - Home</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <HomeMainContent posts={posts} />
       <HomeSideContent />
     </MainWrapper>
