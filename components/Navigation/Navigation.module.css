@@ -15,7 +15,8 @@
     @apply
         w-[40px]
         mt-[40px]
-        mb-[160px];
+        mb-[160px]
+        cursor-pointer;
 
 }
 
