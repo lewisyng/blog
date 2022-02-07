@@ -2,6 +2,7 @@ import { MainWrapper } from '../../components/MainWrapper/MainWrapper'
 import PostWrapper from '../../components/Post/Wrapper/PostWrapper'
 import { sanityClient } from '../../sanity'
 import { Richtext } from '../../components/Post/Richtext/Richtext'
+import { SearchBar } from '../../components/UI/SearchBar/SearchBar'
 
 export const Post = ({ content }: { content: any }) => {
   if (content) {
@@ -10,14 +11,16 @@ export const Post = ({ content }: { content: any }) => {
         <PostWrapper
           author={content[0].author.name}
           publishDate={content[0].publishedAt}
-          className={'w-[70%] border-r-2 pb-10'}
+          className={'flex-grow border-r pb-10'}
         >
           <div className="prose mx-auto">
             <h1>{content[0].title}</h1>
           </div>
           <Richtext content={content} />
         </PostWrapper>
-        <div className={'flex-grow'}>Searchbar</div>
+        <div className={'w-[32%] p-[40px]'}>
+          <SearchBar />
+        </div>
       </MainWrapper>
     )
   } else {
@@ -47,7 +50,8 @@ export const getStaticProps = async ({
       publishedAt,
       body,
       author -> {
-        name
+        name,
+        image
       }
     }
   `

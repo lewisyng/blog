@@ -1,13 +1,31 @@
+import cn from 'classnames'
+
 export const Icon = ({
   src,
   height,
   width,
+  className,
+  icon,
 }: {
-  src: string
+  src?: string
   height?: number
   width?: number
+  className?: string
+  icon?: React.ReactNode
 }) => {
-  return <img src={src} alt="" height={height} width={width} />
+  if (src) {
+    return (
+      <img
+        className={cn(className)}
+        src={src}
+        alt=""
+        height={height}
+        width={width}
+      />
+    )
+  } else {
+    return <div className={"ml-auto cursor-pointer"}>{icon}</div>
+  }
 }
 
 export default Icon

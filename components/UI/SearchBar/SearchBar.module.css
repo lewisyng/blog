@@ -1,5 +1,5 @@
 .searchBar {
-    @apply border-[1px] px-3 py-2 rounded-full;
+    @apply flex border-[1px] px-3 py-2 rounded-full;
 }
 
 .searchBar__icon {

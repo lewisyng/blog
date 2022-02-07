@@ -32,6 +32,12 @@ export default {
       },
     },
     {
+      name: 'tag',
+      title: 'Tag',
+      type: 'reference',
+      to: {type: 'tag'},
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',

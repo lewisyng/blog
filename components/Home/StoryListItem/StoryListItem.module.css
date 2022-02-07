@@ -1,3 +1,7 @@
 .storyList__item {
-    @apply relative flex my-8;
+    @apply relative flex border-b-2;
+}
+
+.storyList__item:not(:first-of-type) {
+    @apply pt-[1.5rem];
 }

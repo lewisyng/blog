@@ -20,9 +20,13 @@ export const getServerSideProps = async () => {
       _id,
       title,
       slug,
+      tag -> {
+        value
+      },
       description,
       author -> {
-        name
+        name,
+        image
       }
     }
   `

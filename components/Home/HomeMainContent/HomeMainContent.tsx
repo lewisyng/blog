@@ -5,21 +5,16 @@ import { Post } from '../../../types'
 
 export const HomeMainContent = ({ posts }: { posts: [Post] }) => {
   return (
-    <div className="home__content min-h-screen border-r-2 px-[140px] pt-[56px] pb-[4px]">
+    <div className="min-h-screen flex-grow border-r px-[140px] pt-[56px] pb-[4px]">
       {/* <LatestTopics /> */}
-      <Heading
-        type="p"
-        className={[
-          'border-b',
-          'border-[#292929]',
-          'pb-[16px]',
-          'inline-block',
-          'cursor-pointer',
-          'font-medium',
-        ]}
-      >
-        Recommended
-      </Heading>
+      <div className="border-b">
+        <Heading
+          type="p"
+          className={`inline-block cursor-pointer border-b border-[#292929] pb-[16px] font-medium`}
+        >
+          Recommended
+        </Heading>
+      </div>
       <Stories posts={posts} />
     </div>
   )
