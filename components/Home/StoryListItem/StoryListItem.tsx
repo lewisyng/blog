@@ -2,7 +2,7 @@ import Badge from '../../UI/Badge/Badge'
 import Icon from '../../UI/Icon/Icon'
 import Text from '../../UI/Text/Text'
 import Heading from '../../UI/Heading/Heading'
-import Image from '../../UI/Image/Image'
+import CustomImage from '../../UI/Image/CustomImage'
 import styles from './StoryListItem.module.css'
 import { Post } from '../../../types'
 import Link from 'next/link'
@@ -49,6 +49,7 @@ export const StoryListItem = ({ post }: { post: Post }) => {
             pathname: `/post/[id]`,
             query: { id: _id },
           }}
+          passHref
         >
           <div>
             <Text className="cursor-pointer">
@@ -73,11 +74,13 @@ export const StoryListItem = ({ post }: { post: Post }) => {
             pathname: `/post/[id]`,
             query: { id: _id },
           }}
+          passHref
         >
           <div>
-            <Image
-              src="/images/story.jpeg"
-              className="cursor-pointer h-[112px] w-[112px] object-cover"
+            <CustomImage
+              src="/static/img/story.jpeg"
+              className="cursor-pointer object-cover"
+              alt="image"
             />
           </div>
         </Link>
