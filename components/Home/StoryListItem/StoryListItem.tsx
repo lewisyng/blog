@@ -8,7 +8,6 @@ import { Post } from '../../../types'
 import Link from 'next/link'
 import { urlFor } from '../../../sanity'
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined'
-import LinkWrapper from '../../shared/LinkWrapper'
 
 export const StoryListItem = ({ post }: { post: Post }) => {
   console.log('post', post)
@@ -38,11 +37,11 @@ export const StoryListItem = ({ post }: { post: Post }) => {
           }}
           passHref
         >
-          <LinkWrapper>
-            <Heading type="h2" className="inline-block pb-[8px]">
+          <div>
+            <Heading type="h2" className="inline-block cursor-pointer pb-[8px]">
               {title}
             </Heading>
-          </LinkWrapper>
+          </div>
         </Link>
 
         <Link
@@ -51,11 +50,11 @@ export const StoryListItem = ({ post }: { post: Post }) => {
             query: { id: _id },
           }}
         >
-          <LinkWrapper>
-            <Text>
+          <div>
+            <Text className="cursor-pointer">
               Why You Should Choose CSS Libraries Instead of Vanilla CSS
             </Text>
-          </LinkWrapper>
+          </div>
         </Link>
 
         <div className="flex items-center gap-3 py-[2rem] !text-[13px]">
@@ -75,12 +74,12 @@ export const StoryListItem = ({ post }: { post: Post }) => {
             query: { id: _id },
           }}
         >
-          <LinkWrapper>
+          <div>
             <Image
               src="/images/story.jpeg"
-              className="h-[112px] w-[112px] object-cover"
+              className="cursor-pointer h-[112px] w-[112px] object-cover"
             />
-          </LinkWrapper>
+          </div>
         </Link>
       </div>
     </div>
