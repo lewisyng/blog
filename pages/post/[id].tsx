@@ -30,7 +30,7 @@ export const Post = ({ content }: { content: any }) => {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [{ params: { id: 'hello-world' } }],
+    paths: [{ params: { id: '687ac157-5a21-45ec-b887-66ad82faaef8' } }],
     fallback: true,
   }
 }
