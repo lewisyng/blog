@@ -1,10 +1,10 @@
 import Heading from '../../UI/Heading/Heading'
+import { SearchBar } from '../../UI/SearchBar/SearchBar'
 export const HomeSideContent = () => {
   return (
-    <div className="flex w-[30%] flex-col pt-[2rem] pl-[56px]">
-      <Heading type="h5">
-        Recommended topics
-      </Heading>
+    <div className="flex flex-col p-[40px] w-[32%]">
+      <SearchBar />
+      <Heading type="h5">Recommended topics</Heading>
     </div>
   )
 }

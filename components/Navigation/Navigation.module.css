@@ -1,0 +1,31 @@
+.navigation {
+    @apply
+        flex
+        flex-col
+        items-center
+        fixed
+        px-[23px]
+        border-r-[1px]
+        h-full
+        top-0
+        left-0;
+}
+
+.navigation__logo {
+    @apply
+        w-[40px]
+        mt-[40px]
+        mb-[160px];
+
+}
+
+.navigation__actions {
+    @apply
+        flex
+        flex-col
+        gap-[40px];
+}
+
+.navigation__actions > * {
+    @apply cursor-pointer;
+}

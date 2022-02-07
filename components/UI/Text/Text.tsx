@@ -1,9 +1,11 @@
-export const Text = ({children}: {
-    children: React.ReactNode
+export const Text = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
 }) => {
-    return (
-        <div>{children}</div>
-    )
+  return <div className={className}>{children}</div>
 }
 
 export default Text
