@@ -18,7 +18,7 @@ export const Post = ({ content }: { content: any }) => {
           </div>
           <Richtext content={content} />
         </PostWrapper>
-        <div className={'w-[32%] p-[40px]'}>
+        <div className={'w-[32%] p-[30px]'}>
           <SearchBar />
         </div>
       </MainWrapper>

@@ -16,6 +16,10 @@ h1 {
   @apply !my-[2rem];
 }
 
+input {
+  @apply border-none outline-none;
+}
+
 .main__wrapper {
   @apply flex
         max-w-[1500px];
