@@ -5,3 +5,7 @@
 .searchBar__icon {
     @apply mr-2;
 }
+
+.searchBar input {
+    @apply mr-[20px] text-[14px];
+}
