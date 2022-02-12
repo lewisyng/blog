@@ -7,7 +7,7 @@ import styles from './StoryListItem.module.css'
 import { Post } from '../../../types'
 import Link from 'next/link'
 import { urlFor } from '../../../sanity'
-import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined'
+import BookmarkAddOutlined from '../../Icons/bookmarkAdd-outlined.svg'
 
 export const StoryListItem = ({ post }: { post: Post }) => {
   console.log('post', post)
@@ -65,7 +65,7 @@ export const StoryListItem = ({ post }: { post: Post }) => {
             </>
           )}
           <Text className="text-[#757575]">5 min read</Text>
-          <Icon className="ml-auto" icon={<BookmarkAddOutlinedIcon />} />
+          <Icon className="ml-auto" icon={<BookmarkAddOutlined />} />
         </div>
       </div>
       <div className="flex w-[172px] justify-end">

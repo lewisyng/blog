@@ -24,7 +24,7 @@ export const Icon = ({
       />
     )
   } else {
-    return <div className={"ml-auto cursor-pointer"}>{icon}</div>
+    return <div className={cn(className, 'cursor-pointer')}>{icon}</div>
   }
 }
 
