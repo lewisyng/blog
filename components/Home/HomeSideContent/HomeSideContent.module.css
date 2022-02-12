@@ -1,0 +1,7 @@
+.homeSideContent__searchBar {
+    @apply pb-[2.5rem] border-b-2;
+}
+
+.recommended__topics {
+    @apply flex gap-2;
+}

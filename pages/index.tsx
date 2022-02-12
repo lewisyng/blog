@@ -5,11 +5,11 @@ import HomeSideContent from '../components/Home/HomeSideContent/HomeSideContent'
 import { sanityClient } from '../sanity.js'
 import { Post } from '../types'
 
-export default function Home({ posts }: { posts: [Post] }) {
+export default function Home({ posts, tags }: { posts: [Post], tags: {value: string}[] }) {
   return (
     <MainWrapper>
       <HomeMainContent posts={posts} />
-      <HomeSideContent />
+      <HomeSideContent tags={tags} />
     </MainWrapper>
   )
 }
@@ -31,11 +31,18 @@ export const getServerSideProps = async () => {
     }
   `
 
+  const tagQuery = `
+    *[_type == "tag"]{
+      value
+    }
+  `
+  
   const posts = await sanityClient.fetch(query)
-
+  const tags = await sanityClient.fetch(tagQuery)
+  
   console.log('object', posts)
-
+  
   return {
-    props: { posts },
+    props: { posts, tags}
   }
 }
