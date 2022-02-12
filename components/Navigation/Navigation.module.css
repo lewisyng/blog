@@ -1,32 +1,23 @@
 .navigation {
-    @apply
+  @apply fixed
+        top-0
+        left-0
         flex
+        h-full
         flex-col
         items-center
-        fixed
-        px-[23px]
         border-r-[1px]
-        h-full
-        top-0
-        left-0;
+        px-[23px];
+}
+
+.navigation__item {
+  @apply cursor-pointer;
 }
 
 .navigation__logo {
-    @apply
-        w-[40px]
-        mt-[40px]
-        mb-[160px]
-        cursor-pointer;
-
+  @apply mt-[40px] mb-[60px] w-[40px] cursor-pointer;
 }
 
-.navigation__actions {
-    @apply
-        flex
-        flex-col
-        gap-[40px];
-}
-
-.navigation__actions > * {
-    @apply cursor-pointer;
+.navigation__links {
+  @apply flex flex-col gap-[40px];
 }
