@@ -2,10 +2,11 @@ import Heading from '../../UI/Heading/Heading'
 import { SearchBar } from '../../UI/SearchBar/SearchBar'
 import Badge from '../../UI/Badge/Badge'
 import styles from './HomeSideContent.module.css'
+import SidebarWrapper from '../../shared/SidbarWrapper'
 
 export const HomeSideContent = ({ tags }: { tags: { value: string }[] }) => {
   return (
-    <div className="flex w-[32%] flex-col m-[30px]">
+    <SidebarWrapper>
       <div className={styles.homeSideContent__searchBar}>
         <SearchBar />
       </div>
@@ -20,7 +21,7 @@ export const HomeSideContent = ({ tags }: { tags: { value: string }[] }) => {
           </div>
         )}
       </div>
-    </div>
+    </SidebarWrapper>
   )
 }
 

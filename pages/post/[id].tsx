@@ -3,6 +3,7 @@ import PostWrapper from '../../components/Post/Wrapper/PostWrapper'
 import { sanityClient } from '../../sanity'
 import { Richtext } from '../../components/Post/Richtext/Richtext'
 import { SearchBar } from '../../components/UI/SearchBar/SearchBar'
+import SidebarWrapper from '../../components/shared/SidbarWrapper'
 
 export const Post = ({ content }: { content: any }) => {
   if (content) {
@@ -18,9 +19,9 @@ export const Post = ({ content }: { content: any }) => {
           </div>
           <Richtext content={content} />
         </PostWrapper>
-        <div className={'w-[32%] p-[30px]'}>
+        <SidebarWrapper>
           <SearchBar />
-        </div>
+        </SidebarWrapper>
       </MainWrapper>
     )
   } else {
