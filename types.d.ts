@@ -6,6 +6,7 @@ export interface Post {
   tag: {
     value: string
   }
+  publishedAt: Date
   author: {
     name: string
     image: string

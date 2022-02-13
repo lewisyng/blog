@@ -22,12 +22,16 @@ export const StoryListItem = ({ post }: { post: Post }) => {
             <img src={urlFor(post.author.image).url()!} alt="" />
           </div>
           <Heading type="h6" className="mr-1">
-            June Redwood in Enlear Academy
+            {post.author.name}
           </Heading>
-          ·
-          <Text className={'ml-1 text-[14px] text-[#757575]'}>
-            Oct 14, 2021
-          </Text>
+          {post.publishedAt && (
+            <>
+              ·
+              <Text className={'ml-1 text-[14px] text-[#757575]'}>
+                {post.publishedAt.split('T')[0]}
+              </Text>
+            </>
+          )}
         </div>
 
         <Link
@@ -52,9 +56,7 @@ export const StoryListItem = ({ post }: { post: Post }) => {
           passHref
         >
           <div>
-            <Text className="cursor-pointer">
-              Why You Should Choose CSS Libraries Instead of Vanilla CSS
-            </Text>
+            <Text className="cursor-pointer">{post.description}</Text>
           </div>
         </Link>
 
@@ -68,7 +70,7 @@ export const StoryListItem = ({ post }: { post: Post }) => {
           <Icon className="ml-auto" icon={<BookmarkAddOutlined />} />
         </div>
       </div>
-      <div className="flex w-[172px] justify-end">
+      <div className="ml-[60px] flex w-[112px] justify-end">
         <Link
           href={{
             pathname: `/post/[id]`,
