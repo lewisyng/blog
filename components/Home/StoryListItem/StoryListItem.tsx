@@ -13,6 +13,8 @@ export const StoryListItem = ({ post }: { post: Post }) => {
   console.log('post', post)
   const { title, _id } = post
 
+  // const [readingTime, setReadingTime] = useCalculateReadingTime(post.body)
+
   return (
     <div className={styles.storyList__item}>
       <div className="storyListItem__content w-[100%]">

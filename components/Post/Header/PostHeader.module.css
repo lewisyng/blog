@@ -1,0 +1,11 @@
+.postHeader__author {
+    @apply mb-1;
+}
+
+.postHeader__data {
+    @apply flex gap-3;
+}
+
+.postHeader__data * {
+    @apply text-[#757575] text-[14px];
+}

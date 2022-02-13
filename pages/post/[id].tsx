@@ -11,12 +11,17 @@ export const Post = ({ content }: { content: any }) => {
       <MainWrapper>
         <PostWrapper
           author={content[0].author.name}
+          authorImage={content[0].author.image}
           publishDate={content[0].publishedAt}
           className={'flex-grow border-r pb-10'}
+          content={content}
         >
           <div className="prose mx-auto">
             <h1>{content[0].title}</h1>
           </div>
+          {content[0].description && (
+            <div className="prose mx-auto">{content[0].description}</div>
+          )}
           <Richtext content={content} />
         </PostWrapper>
         <SidebarWrapper>
