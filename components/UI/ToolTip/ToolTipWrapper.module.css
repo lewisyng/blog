@@ -1,0 +1,34 @@
+.toolTip__wrapper {
+  @apply relative;
+}
+
+.toolTip {
+  @apply absolute top-0 right-[-1.25rem] cursor-pointer rounded bg-black px-4 py-2 text-[13px] font-bold text-white;
+  transform: translate(100%, -25%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* little arrow on side */
+/* todo dynamic arrow positioning according to direction */
+.toolTip::before {
+  content: '';
+  background: black;
+  height: 16px;
+  width: 16px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  transform-origin: center;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.toolTip__show {
+  transition: opacity 0.15s 0.25s ease-in-out;
+  opacity: 1;
+}
+
+.toolTip * {
+  @apply cursor-pointer;
+}

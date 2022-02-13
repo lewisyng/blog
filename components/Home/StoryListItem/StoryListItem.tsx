@@ -8,6 +8,7 @@ import { Post } from '../../../types'
 import Link from 'next/link'
 import { urlFor } from '../../../sanity'
 import BookmarkAddOutlined from '../../Icons/bookmarkAdd-outlined.svg'
+import ToolTipWrapper from '../../UI/ToolTip/ToolTipWrapper'
 
 export const StoryListItem = ({ post }: { post: Post }) => {
   console.log('post', post)
@@ -63,12 +64,10 @@ export const StoryListItem = ({ post }: { post: Post }) => {
         </Link>
 
         <div className="flex items-center gap-3 py-[2rem] !text-[13px]">
-          {post.tag && (
-            <>
-              <Badge>{post.tag.value}</Badge>·
-            </>
-          )}
-          <Icon className="ml-auto" icon={<BookmarkAddOutlined />} />
+          {post.tag && <Badge>{post.tag.value}</Badge>}
+          <ToolTipWrapper text="Add to bookmarks" className="ml-auto">
+            <Icon icon={<BookmarkAddOutlined />} />
+          </ToolTipWrapper>
         </div>
       </div>
       <div className="ml-[60px] flex w-[112px] justify-end">

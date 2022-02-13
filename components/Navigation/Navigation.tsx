@@ -4,6 +4,7 @@ import Link from 'next/link'
 import HomeIcon from '../Icons/home-filled.svg'
 import BookmarkOutlined from '../Icons/bookmark-outlined.svg'
 import cn from 'classnames'
+import ToolTipWrapper from '../UI/ToolTip/ToolTipWrapper'
 
 export const Navigation = () => {
   return (
@@ -15,9 +16,15 @@ export const Navigation = () => {
       </Link>
       <div className={cn(styles.navigation__item, styles.navigation__links)}>
         <Link href="/" passHref>
-          <HomeIcon />
+          <div>
+            <ToolTipWrapper text="Home">
+              <HomeIcon />
+            </ToolTipWrapper>
+          </div>
         </Link>
-        <BookmarkOutlined />
+        <ToolTipWrapper text="Bookmarked">
+          <BookmarkOutlined />
+        </ToolTipWrapper>
       </div>
     </div>
   )
