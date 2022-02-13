@@ -66,7 +66,6 @@ export const StoryListItem = ({ post }: { post: Post }) => {
               <Badge>{post.tag.value}</Badge>·
             </>
           )}
-          <Text className="text-[#757575]">5 min read</Text>
           <Icon className="ml-auto" icon={<BookmarkAddOutlined />} />
         </div>
       </div>
