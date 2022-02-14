@@ -3,7 +3,7 @@ import { Heading } from '../../UI/Heading/Heading'
 import LatestTopics from '../LatestTopics/LatestTopics'
 import { Post } from '../../../types'
 
-export const HomeMainContent = ({ posts }: { posts: [Post] }) => {
+export const HomeMainContent = ({ posts, selectedTopics }: { posts: [Post], selectedTopics: string[] }) => {
   return (
     <div className="min-h-screen flex-grow border-r px-[140px] pt-[56px] pb-[4px]">
       {/* <LatestTopics /> */}
@@ -15,7 +15,7 @@ export const HomeMainContent = ({ posts }: { posts: [Post] }) => {
           Recommended
         </Heading>
       </div>
-      <Stories posts={posts} />
+      <Stories posts={posts} selectedTopics={selectedTopics} />
     </div>
   )
 }
