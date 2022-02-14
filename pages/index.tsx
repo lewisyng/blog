@@ -4,12 +4,25 @@ import { MainWrapper } from '../components/MainWrapper/MainWrapper'
 import HomeSideContent from '../components/Home/HomeSideContent/HomeSideContent'
 import { sanityClient } from '../sanity.js'
 import { Post } from '../types'
+import { useState } from 'react'
 
-export default function Home({ posts, tags }: { posts: [Post], tags: {value: string}[] }) {
+export default function Home({
+  posts,
+  tags,
+}: {
+  posts: [Post]
+  tags: { value: string }[]
+}) {
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([])
+
+  const handleBadgeClick = (badge: string) => {
+    setSelectedTopics([...selectedTopics, badge])
+  }
+
   return (
     <MainWrapper>
-      <HomeMainContent posts={posts} />
-      <HomeSideContent tags={tags} />
+      <HomeMainContent posts={posts} selectedTopics={selectedTopics} />
+      <HomeSideContent tags={tags} handleBadgeClick={handleBadgeClick} />
     </MainWrapper>
   )
 }
@@ -37,13 +50,13 @@ export const getServerSideProps = async () => {
       value
     }
   `
-  
+
   const posts = await sanityClient.fetch(query)
   const tags = await sanityClient.fetch(tagQuery)
-  
+
   console.log('object', posts)
-  
+
   return {
-    props: { posts, tags}
+    props: { posts, tags },
   }
 }

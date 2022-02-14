@@ -1,10 +1,14 @@
-import { Post } from '../../../types';
-import StoryList from '../StoryList/StoryList';
+import { Post } from '../../../types'
+import StoryList from '../StoryList/StoryList'
 
-export const Stories = ({posts}: {posts: [Post]}) => {
-    return (
-        <StoryList posts={posts} />
-    )
+export const Stories = ({
+  posts,
+  selectedTopics,
+}: {
+  posts: [Post]
+  selectedTopics: string[]
+}) => {
+  return <StoryList posts={posts} selectedTopics={selectedTopics} />
 }
 
 export default Stories
