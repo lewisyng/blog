@@ -8,7 +8,7 @@ export const Badge = ({
   children,
   size,
   as,
-  handleBadgeClick,
+  handleBadgeClick = () => [],
 }: {
   children: React.ReactNode
   size?: Size
