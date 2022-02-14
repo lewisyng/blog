@@ -13,7 +13,7 @@ export const Badge = ({
   children: React.ReactNode
   size?: Size
   as?: As
-  handleBadgeClick: (el: string) => void
+  handleBadgeClick?: (el: string) => void
 }) => {
   const Tag = as === 'button' ? 'button' : 'span'
 
