@@ -30,3 +30,8 @@ input {
     @apply mx-auto;
   }
 }
+
+@font-face {
+    font-family: "mainFont";
+    src: url("../public/fonts/font.woff") format('woff');
+}

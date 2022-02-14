@@ -58,7 +58,7 @@ export const StoryListItem = ({ post }: { post: Post }) => {
           }}
           passHref
         >
-          <div>
+          <div className={styles.test}>
             <Text className="cursor-pointer">{post.description}</Text>
           </div>
         </Link>
