@@ -22,9 +22,13 @@ export const Navigation = () => {
             </ToolTipWrapper>
           </div>
         </Link>
-        <ToolTipWrapper text="Bookmarked">
-          <BookmarkOutlined />
-        </ToolTipWrapper>
+        <Link href="/bookmarked" passHref>
+          <div>
+            <ToolTipWrapper text="Bookmarked">
+              <BookmarkOutlined />
+            </ToolTipWrapper>
+          </div>
+        </Link>
       </div>
     </div>
   )
