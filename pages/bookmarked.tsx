@@ -1,4 +1,4 @@
-import BookmarkedMain from "../components/Bookmarked/BookmarkeMain/BookmarkedMain"
+import BookmarkedMain from "../components/Bookmarked/BookmarkedMain/BookmarkedMain"
 import { MainWrapper } from "../components/MainWrapper/MainWrapper"
 
 export const bookmarked = () => {
