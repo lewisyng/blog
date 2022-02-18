@@ -4,7 +4,7 @@ import { MainWrapper } from "../components/MainWrapper/MainWrapper"
 export const bookmarked = () => {
     return (
         <MainWrapper>
-            <BookmarkedMain></BookmarkedMain>
+            <BookmarkedMain />
         </MainWrapper>
     )
 }
