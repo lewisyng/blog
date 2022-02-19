@@ -1,0 +1,10 @@
+.button {
+    outline: none;
+    border: none;
+}
+
+.button[data-variant="secondary"] {
+    padding: 4px 12px 6px;
+    border: 1px solid #757575;
+    @apply rounded-full text-[14px] mr-[12px];
+}
