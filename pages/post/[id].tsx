@@ -1,14 +1,14 @@
-import { MainWrapper } from '../../components/MainWrapper/MainWrapper'
+import { PageWrapper } from '../../components/PageWrapper/PageWrapper'
 import PostWrapper from '../../components/Post/Wrapper/PostWrapper'
 import { sanityClient } from '../../sanity'
 import { Richtext } from '../../components/Post/Richtext/Richtext'
 import { SearchBar } from '../../components/UI/SearchBar/SearchBar'
-import SidebarWrapper from '../../components/shared/SidbarWrapper'
+import SidebarWrapper from '../../components/shared/Sidebar/Wrapper/Wrapper'
 
 export const Post = ({ content }: { content: any }) => {
   if (content) {
     return (
-      <MainWrapper>
+      <PageWrapper>
         <PostWrapper
           author={content[0].author.name}
           authorImage={content[0].author.image}
@@ -27,7 +27,7 @@ export const Post = ({ content }: { content: any }) => {
         <SidebarWrapper>
           <SearchBar />
         </SidebarWrapper>
-      </MainWrapper>
+      </PageWrapper>
     )
   } else {
     return null

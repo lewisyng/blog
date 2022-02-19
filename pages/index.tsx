@@ -1,10 +1,9 @@
-import Head from 'next/head'
 import HomeMainContent from '../components/Home/HomeMainContent/HomeMainContent'
-import { MainWrapper } from '../components/MainWrapper/MainWrapper'
+import { PageWrapper } from '../components/PageWrapper/PageWrapper'
 import HomeSideContent from '../components/Home/HomeSideContent/HomeSideContent'
-import { sanityClient } from '../sanity.js'
 import { Post } from '../types'
-import { useState } from 'react'
+import fetchPosts from '../services/fetching/fetchPosts'
+import fetchTags from '../services/fetching/fetchTags'
 
 export default function Home({
   posts,
@@ -13,48 +12,17 @@ export default function Home({
   posts: [Post]
   tags: { value: string }[]
 }) {
-  const [selectedTopics, setSelectedTopics] = useState<string[]>([])
-
-  const handleBadgeClick = (badge: string) => {
-    setSelectedTopics([...selectedTopics, badge])
-  }
-
   return (
-    <MainWrapper>
-      <HomeMainContent posts={posts} selectedTopics={selectedTopics} />
-      <HomeSideContent tags={tags} handleBadgeClick={handleBadgeClick} />
-    </MainWrapper>
+    <PageWrapper>
+      <HomeMainContent posts={posts} />
+      <HomeSideContent tags={tags} />
+    </PageWrapper>
   )
 }
 
 export const getServerSideProps = async () => {
-  const query = `
-    *[_type == "post"]{
-      _id,
-      title,
-      slug,
-      tag -> {
-        value
-      },
-      publishedAt,
-      description,
-      author -> {
-        name,
-        image
-      }
-    }
-  `
-
-  const tagQuery = `
-    *[_type == "tag"]{
-      value
-    }
-  `
-
-  const posts = await sanityClient.fetch(query)
-  const tags = await sanityClient.fetch(tagQuery)
-
-  console.log('object', posts)
+  const posts = await fetchPosts()
+  const tags = await fetchTags()
 
   return {
     props: { posts, tags },

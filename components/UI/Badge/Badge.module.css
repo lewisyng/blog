@@ -1,5 +1,5 @@
 .badge {
-  @apply transition-colors rounded-full bg-[#F2F2F2] px-2 py-1 text-[14px] text-[#292929] hover:bg-[#E6E6E6];
+  @apply flex justify-center items-center transition-colors rounded-full bg-[#F2F2F2] px-2 py-1 text-[14px] text-[#292929] hover:bg-[#E6E6E6];
 }
 
 .badge[data-size='large'] {

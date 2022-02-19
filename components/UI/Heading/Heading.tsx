@@ -7,7 +7,7 @@ export const Heading = ({
   className,
   children,
 }: {
-  type: string
+  type?: string
   variant?: string
   className?: string
   children: React.ReactNode
