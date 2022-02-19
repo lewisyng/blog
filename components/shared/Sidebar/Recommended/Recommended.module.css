@@ -1,0 +1,3 @@
+.recommended__topics {
+    @apply flex gap-2;
+}
