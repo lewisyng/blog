@@ -1,4 +1,4 @@
-import { MainWrapper } from '../components/MainWrapper/MainWrapper'
+import { MainWrapper } from '../components/PageWrapper/PageWrapper'
 import Badge from '../components/UI/Badge/Badge'
 import Heading from '../components/UI/Heading/Heading'
 import styles from './components.module.css'

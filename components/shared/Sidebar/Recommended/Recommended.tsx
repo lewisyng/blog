@@ -11,15 +11,17 @@ export const Recommended = ({ tags }: { tags: { value: string }[] }) => {
       </Heading>
 
       {tags && (
-        <Link href="/" passHref>
-          <div className={styles.recommended__topics}>
-            {tags.map((tag) => (
-              <Badge key={tag.value} size="large" as="button">
-                {tag.value}
-              </Badge>
-            ))}
-          </div>
-        </Link>
+        <div className={styles.recommended__topics}>
+          {tags.map((tag) => (
+            <Link key={tag.value} href={`tag/${tag.value}`} passHref>
+              <div>
+                <Badge size="large" as="button">
+                  {tag.value}
+                </Badge>
+              </div>
+            </Link>
+          ))}
+        </div>
       )}
     </div>
   )

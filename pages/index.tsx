@@ -1,5 +1,5 @@
 import HomeMainContent from '../components/Home/HomeMainContent/HomeMainContent'
-import { MainWrapper } from '../components/MainWrapper/MainWrapper'
+import { PageWrapper } from '../components/PageWrapper/PageWrapper'
 import HomeSideContent from '../components/Home/HomeSideContent/HomeSideContent'
 import { Post } from '../types'
 import fetchPosts from '../services/fetching/fetchPosts'
@@ -13,10 +13,10 @@ export default function Home({
   tags: { value: string }[]
 }) {
   return (
-    <MainWrapper>
+    <PageWrapper>
       <HomeMainContent posts={posts} />
       <HomeSideContent tags={tags} />
-    </MainWrapper>
+    </PageWrapper>
   )
 }
 
