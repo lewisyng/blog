@@ -1,7 +1,11 @@
 .storyList__item {
-    @apply relative flex border-b-2;
+    @apply relative border-b-2;
 }
 
 .storyList__item:not(:first-of-type) {
     @apply pt-[1.5rem];
+}
+
+.storyListItem__image img {
+    @apply h-[56px] w-[56px] md:w-[112px] md:h-[112px];
 }

@@ -2,10 +2,13 @@
 
 ## Setup
 ### Sanity
+cd blog
 sanity start
+runs on localhost:3333
 ### Nextjs
 npm run build
 npm run dev
+runs on localhost:3000
 
 \
 

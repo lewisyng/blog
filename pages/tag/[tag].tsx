@@ -23,7 +23,7 @@ export const tag = ({
           <div className="flex items-center justify-center rounded-full bg-[#ededed] fill-[#292929] p-[0.25em]">
             <TaggedFilled />
           </div>
-          <Heading type="h1" className="text-[#292929]">
+          <Heading variant="h1" className="text-[#292929]">
             {tag}
           </Heading>
         </div>
@@ -36,7 +36,7 @@ export const tag = ({
           </div>
         )}
       </MainWrapper>
-      <MainSidebar tags={tags} />
+      <MainSidebar className="hidden lg:block" tags={tags} />
     </PageWrapper>
   )
 }

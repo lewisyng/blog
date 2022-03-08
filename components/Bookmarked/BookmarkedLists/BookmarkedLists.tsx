@@ -1,7 +1,7 @@
-import styles from "./ListsList.module.css";
-import { ListsListItem } from '../ListsListItem/ListsListItem';
+import styles from './BookmarkedLists.module.css'
+import BookmarkedList from '../BookmarkedList/BookmarkedList';
 
-export const ListsList = () => {
+export const BookmarkedLists = () => {
   const lists = [
     {
       name: 'Reading List',
@@ -20,10 +20,10 @@ export const ListsList = () => {
   return (
     <div className={styles.listsList}>
       {lists.map((list, idx) => (
-        <ListsListItem className={styles.list} key={idx} list={list} />
+        <BookmarkedList className={styles.list} key={idx} list={list} />
       ))}
     </div>
   )
 }
 
-export default ListsList
+export default BookmarkedLists

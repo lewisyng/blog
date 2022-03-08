@@ -6,7 +6,7 @@ import styles from './Recommended.module.css'
 export const Recommended = ({ tags }: { tags: { value: string }[] }) => {
   return (
     <div>
-      <Heading type="h5" className={'mb-[1rem]'}>
+      <Heading variant="h5" className={'mb-[1rem]'}>
         Recommended topics
       </Heading>
 

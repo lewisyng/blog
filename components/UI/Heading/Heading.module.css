@@ -1,19 +1,19 @@
-.heading[data-type="h1"] {
-    @apply font-bold text-[42px] leading-[52px];
+.heading[data-variant='h1'] {
+  @apply text-[42px] font-bold leading-[52px];
 }
 
-.heading[data-type="h2"] {
-    @apply font-bold text-[22px] leading-7;
+.heading[data-variant='h2'] {
+  @apply text-[16px] font-bold leading-[20px] sm:text-[22px] sm:leading-7;
 }
 
-.heading[data-type="h5"] {
-    @apply font-bold text-[15px];
+.heading[data-variant='h5'] {
+  @apply text-[15px] font-bold;
 }
 
-.heading[data-type="h6"] {
-    @apply font-bold text-[13px];
+.heading[data-variant='h6'] {
+  @apply text-[13px] font-bold;
 }
 
-.heading[data-type="p"] {
-    @apply text-[14px] text-[#292929];
+.heading[data-variant='h3'] {
+  @apply text-[14px] text-[#292929];
 }

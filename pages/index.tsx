@@ -1,5 +1,5 @@
 import HomeMainContent from '../components/Home/HomeMainContent/HomeMainContent'
-import { PageWrapper } from '../components/PageWrapper/PageWrapper'
+import PageWrapper from '../components/PageWrapper/PageWrapper'
 import HomeSideContent from '../components/Home/HomeSideContent/HomeSideContent'
 import { Post } from '../types'
 import fetchPosts from '../services/fetching/fetchPosts'
@@ -15,7 +15,7 @@ export default function Home({
   return (
     <PageWrapper>
       <HomeMainContent posts={posts} />
-      <HomeSideContent tags={tags} />
+      <HomeSideContent className="hidden lg:block" tags={tags} />
     </PageWrapper>
   )
 }

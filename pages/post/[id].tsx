@@ -2,31 +2,31 @@ import { PageWrapper } from '../../components/PageWrapper/PageWrapper'
 import PostWrapper from '../../components/Post/Wrapper/PostWrapper'
 import { sanityClient } from '../../sanity'
 import { Richtext } from '../../components/Post/Richtext/Richtext'
-import { SearchBar } from '../../components/UI/SearchBar/SearchBar'
-import SidebarWrapper from '../../components/shared/Sidebar/Wrapper/Wrapper'
+import MainSidebar from '../../components/shared/Sidebar/MainSidebar/MainSidebar'
+import { MainWrapper } from '../../components/shared/MainWrapper/MainWrapper'
 
 export const Post = ({ content }: { content: any }) => {
   if (content) {
     return (
       <PageWrapper>
-        <PostWrapper
-          author={content[0].author.name}
-          authorImage={content[0].author.image}
-          publishDate={content[0].publishedAt}
-          className={'flex-grow border-r pb-10'}
-          content={content}
-        >
-          <div className="prose mx-auto">
-            <h1>{content[0].title}</h1>
-          </div>
-          {content[0].description && (
-            <div className="prose mx-auto">{content[0].description}</div>
-          )}
-          <Richtext content={content} />
-        </PostWrapper>
-        <SidebarWrapper>
-          <SearchBar />
-        </SidebarWrapper>
+        <MainWrapper>
+          <PostWrapper
+            author={content[0].author.name}
+            authorImage={content[0].author.image}
+            publishDate={content[0].publishedAt}
+            className={'flex-grow pb-10'}
+            content={content}
+          >
+            <div className="prose mx-auto">
+              <h1>{content[0].title}</h1>
+            </div>
+            {content[0].description && (
+              <div className="prose mx-auto">{content[0].description}</div>
+            )}
+            <Richtext content={content} />
+          </PostWrapper>
+        </MainWrapper>
+        <MainSidebar className="hidden lg:block" tags={null} />
       </PageWrapper>
     )
   } else {

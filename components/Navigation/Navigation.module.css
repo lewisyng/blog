@@ -1,13 +1,14 @@
-.navigation {
+.navigation__desktop {
   @apply fixed
         top-0
-        left-0
         flex
+        hidden
         h-full
         flex-col
         items-center
         border-r-[1px]
-        px-[23px];
+        px-[23px] 
+        lg:block;
 }
 
 .navigation__item {
@@ -15,9 +16,9 @@
 }
 
 .navigation__logo {
-  @apply mt-[40px] mb-[60px] w-[40px] cursor-pointer;
+  @apply lg:mt-[40px] lg:mb-[60px] w-[40px] cursor-pointer;
 }
 
 .navigation__links {
-  @apply flex flex-col gap-[40px];
+  @apply flex flex-col items-center gap-[40px];
 }
