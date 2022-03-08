@@ -14,11 +14,11 @@ export const CustomImage = ({
   alt: string
 }) => {
   return (
-    <Image
+    <img
       src={src}
       alt={alt}
-      width={112}
-      height={112}
+      width={width}
+      height={height}
       className={className}
     />
   )

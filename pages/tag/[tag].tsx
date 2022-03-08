@@ -2,18 +2,41 @@ import Stories from '../../components/Home/Stories/Stories'
 import { MainWrapper } from '../../components/shared/MainWrapper/MainWrapper'
 import { PageWrapper } from '../../components/PageWrapper/PageWrapper'
 import fetchPostsByTag from '../../services/fetching/fetchPostsByTag'
-import SidebarWrapper from '../../components/shared/Sidebar/Wrapper/Wrapper'
-import { SearchBar } from '../../components/UI/SearchBar/SearchBar'
+import Heading from '../../components/UI/Heading/Heading'
+import TaggedFilled from '../../components/Icons/tagged-filled.svg'
+import MainSidebar from '../../components/shared/Sidebar/MainSidebar/MainSidebar'
+import fetchTags from '../../services/fetching/fetchTags'
 
-export const tag = ({ posts }: { posts: any }) => {
+export const tag = ({
+  tag,
+  tags,
+  posts,
+}: {
+  tag: string
+  tags: { value: string }[]
+  posts: any
+}) => {
   return (
     <PageWrapper>
       <MainWrapper>
-        <Stories posts={posts} />
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center rounded-full bg-[#ededed] fill-[#292929] p-[0.25em]">
+            <TaggedFilled />
+          </div>
+          <Heading variant="h1" className="text-[#292929]">
+            {tag}
+          </Heading>
+        </div>
+
+        {posts && posts.length > 0 ? (
+          <Stories posts={posts} />
+        ) : (
+          <div className="">
+            No stories were found for this tag. Please select another
+          </div>
+        )}
       </MainWrapper>
-      <SidebarWrapper>
-        <SearchBar />
-      </SidebarWrapper>
+      <MainSidebar className="hidden lg:block" tags={tags} />
     </PageWrapper>
   )
 }
@@ -38,10 +61,11 @@ export const getStaticProps = async ({
 }) => {
   const { tag } = params
 
+  const tags = await fetchTags()
   const posts = await fetchPostsByTag(tag)
 
   return {
-    props: { posts },
+    props: { tag, tags, posts },
   }
 }
 

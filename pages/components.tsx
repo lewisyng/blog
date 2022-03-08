@@ -13,12 +13,12 @@ export const Components = () => {
         <Badge size="large">Badge large</Badge>
       </div>
       <div className={styles.heading}>
-        <Heading type="h1">Heading 1</Heading>
-        <Heading type="h2">Heading 2</Heading>
-        <Heading type="h3">Heading 3</Heading>
-        <Heading type="h4">Heading 4</Heading>
-        <Heading type="h5">Heading 5</Heading>
-        <Heading type="h6">Heading 6</Heading>
+        <Heading variant="h1">Heading 1</Heading>
+        <Heading variant="h2">Heading 2</Heading>
+        <Heading variant="h3">Heading 3</Heading>
+        <Heading variant="h4">Heading 4</Heading>
+        <Heading variant="h5">Heading 5</Heading>
+        <Heading variant="h6">Heading 6</Heading>
       </div>
     </PageWrapper>
   )

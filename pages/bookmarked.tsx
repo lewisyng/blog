@@ -1,4 +1,4 @@
-import BookmarkedMain from '../components/Bookmarked/BookmarkedMain/BookmarkedMain'
+import BookmarkedShell from '../components/Bookmarked/BookmarkedShell/BookmarkedShell'
 import PageWrapper from '../components/PageWrapper/PageWrapper'
 import MainSidebar from '../components/shared/Sidebar/MainSidebar/MainSidebar'
 import fetchTags from '../services/fetching/fetchTags'
@@ -6,8 +6,8 @@ import fetchTags from '../services/fetching/fetchTags'
 export const bookmarked = ({ tags }: { tags: { value: string }[] }) => {
   return (
     <PageWrapper>
-      <BookmarkedMain />
-      <MainSidebar tags={tags} />
+      <BookmarkedShell />
+      <MainSidebar className="hidden lg:block" tags={tags} />
     </PageWrapper>
   )
 }
