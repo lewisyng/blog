@@ -26,7 +26,7 @@ export const Post = ({ content }: { content: any }) => {
             <Richtext content={content} />
           </PostWrapper>
         </MainWrapper>
-        <MainSidebar className="hidden lg:block" tags={null} />
+        <MainSidebar className="hidden lg:block" tags={[]} />
       </PageWrapper>
     )
   } else {
