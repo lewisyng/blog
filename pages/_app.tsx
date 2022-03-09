@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div>
       <Head>
         <title>Blog - Home</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Images/LogoIcon.png" />
       </Head>
 
       <GeneralWrapper>
