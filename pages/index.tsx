@@ -15,6 +15,7 @@ export default function Home({
   return (
     <PageWrapper>
       <HomeMainContent posts={posts} />
+      
       <HomeSideContent className="hidden lg:block" tags={tags} />
     </PageWrapper>
   )
