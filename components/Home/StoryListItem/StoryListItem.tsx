@@ -7,16 +7,22 @@ import styles from './StoryListItem.module.css'
 import { Post } from '../../../types'
 import Link from 'next/link'
 import { urlFor } from '../../../sanity'
+import BookmarkIcon from '@mui/icons-material/Bookmark'
 import BookmarkAddOutlined from '../../Icons/bookmarkAdd-outlined.svg'
 import ToolTipWrapper from '../../UI/ToolTip/ToolTipWrapper'
 import Image from 'next/image'
 import cn from 'classnames'
 
-export const StoryListItem = ({ post }: { post: Post }) => {
-  console.log('post', post)
+export const StoryListItem = ({
+  post,
+  handleBookmark,
+  isBookmarked,
+}: {
+  post: Post
+  handleBookmark: (id: string) => void
+  isBookmarked: boolean
+}) => {
   const { title, _id } = post
-
-  // const [readingTime, setReadingTime] = useCalculateReadingTime(post.body)
 
   return (
     <div className={styles.storyList__item}>
@@ -72,13 +78,21 @@ export const StoryListItem = ({ post }: { post: Post }) => {
           <div className="items-between flex gap-3 py-[1rem] pr-10 !text-[13px] md:py-[2rem]">
             {post.tag && <Badge>{post.tag.value}</Badge>}
 
-            <ToolTipWrapper text="Add to bookmarks" className="ml-auto">
-              <Icon icon={<BookmarkAddOutlined />} />
+            <ToolTipWrapper
+              text="Add to bookmarks"
+              className="ml-auto"
+              onClick={() => handleBookmark(_id)}
+            >
+              {isBookmarked ? (
+                <Icon icon={<BookmarkIcon />} />
+              ) : (
+                <Icon icon={<BookmarkAddOutlined />} />
+              )}
             </ToolTipWrapper>
           </div>
         </div>
 
-        <div className="flex ml-2">
+        <div className="ml-2 flex">
           <Link
             href={{
               pathname: `/post/[id]`,

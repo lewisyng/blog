@@ -7,11 +7,13 @@ export const ToolTipWrapper = ({
   text,
   direction = 'right',
   className,
+  onClick,
 }: {
   children: React.ReactNode
   text: string
   direction?: string
   className?: string
+  onClick?: () => void
 }) => {
   const [show, setShow] = useState(false)
 
@@ -20,6 +22,7 @@ export const ToolTipWrapper = ({
       className={cn(className, styles.toolTip__wrapper)}
       onMouseOver={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
+      onClick={onClick}
     >
       <div className={cn(styles.toolTip, show && styles.toolTip__show)}>
         {text}
