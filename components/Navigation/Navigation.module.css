@@ -1,5 +1,5 @@
 .navigation__desktop {
-  @apply fixed
+  @apply fixed z-[100]
         top-0
         flex
         hidden
