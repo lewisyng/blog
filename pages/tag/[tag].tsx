@@ -3,7 +3,7 @@ import { MainWrapper } from '../../components/shared/MainWrapper/MainWrapper'
 import { PageWrapper } from '../../components/PageWrapper/PageWrapper'
 import fetchPostsByTag from '../../services/fetching/fetchPostsByTag'
 import Heading from '../../components/UI/Heading/Heading'
-import TaggedFilled from '../../components/Icons/tagged-filled.svg'
+import { TaggedFilled } from '../../components/Icons'
 import MainSidebar from '../../components/shared/Sidebar/MainSidebar/MainSidebar'
 import fetchTags from '../../services/fetching/fetchTags'
 
