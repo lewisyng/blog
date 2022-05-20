@@ -1,5 +1,5 @@
 # Blog
-
+This is a blogging platform that utilizes Sanity as a leightweight headless CMS.
 ## Setup
 ### Sanity
 cd blog
