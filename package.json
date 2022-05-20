@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "icons": "svgr -d components/Icons/ public/Icons/"
+    "icons": "npx @svgr/cli --out-dir components/Icons/ public/Icons/"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
