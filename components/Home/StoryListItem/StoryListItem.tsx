@@ -1,17 +1,14 @@
-import Badge from '../../UI/Badge/Badge'
-import Icon from '../../UI/Icon/Icon'
 import Text from '../../UI/Text/Text'
 import Heading from '../../UI/Heading/Heading'
-import CustomImage from '../../UI/Image/CustomImage'
 import styles from './StoryListItem.module.css'
 import { Post } from '../../../types'
-import Link from 'next/link'
 import { urlFor } from '../../../sanity'
-import BookmarkIcon from '@mui/icons-material/Bookmark'
-import { BookmarkAddOutlined } from '../../Icons'
-import ToolTipWrapper from '../../UI/ToolTip/ToolTipWrapper'
 import Image from 'next/image'
-import cn from 'classnames'
+import { StoryListItemTitle } from './shared/StoryListItemTitle'
+import { StoryListItemDescription } from './shared/StoryListItemDescription'
+import { StoryListItemTags } from './shared/StoryListItemTags'
+import { StoryListItemImage } from './shared/StoryListItemImage'
+import { StoryListItemBookmark } from './shared/StoryListItemBookmark'
 
 export const StoryListItem = ({
   post,
@@ -31,13 +28,15 @@ export const StoryListItem = ({
         <div className="mr-2 h-[20px] w-[20px] overflow-hidden rounded-full">
           <img src={urlFor(post.author.image).url()!} alt="" />
         </div>
+
         <Heading variant="h6" className="mr-1">
           {post.author.name}
         </Heading>
+
         {post.publishedAt && (
           <>
-            ·
-            <Text className={'ml-1 text-[14px] text-[#757575]'}>
+            {'·'}
+            <Text className="ml-1 text-[14px] text-[#757575]">
               {post.publishedAt.split('T')[0]}
             </Text>
           </>
@@ -46,78 +45,26 @@ export const StoryListItem = ({
 
       <div className="flex justify-between">
         <div className="storyListItem__content flex-[1_1_auto] flex-grow">
-          <Link
-            href={{
-              pathname: `/post/[id]`,
-              query: { id: _id },
-            }}
-            passHref
-          >
-            <div>
-              <Heading
-                variant="h2"
-                className="inline-block cursor-pointer pb-[8px]"
-              >
-                {title}
-              </Heading>
-            </div>
-          </Link>
+          <StoryListItemTitle id={_id}>{title}</StoryListItemTitle>
 
-          <Link
-            href={{
-              pathname: `/post/[id]`,
-              query: { id: _id },
-            }}
-            passHref
-          >
-            <div className={'hidden md:block'}>
-              <Text className="cursor-pointer">{post.description}</Text>
-            </div>
-          </Link>
+          <StoryListItemDescription id={_id}>
+            <Text className="cursor-pointer">{post.description}</Text>
+          </StoryListItemDescription>
 
           <div className="items-between flex gap-3 py-[1rem] pr-10 !text-[13px] md:py-[2rem]">
-            {post.tag && <Badge>{post.tag.value}</Badge>}
+            <StoryListItemTags tag={post.tag.value} />
 
-            <ToolTipWrapper
-              text="Add to bookmarks"
-              className="ml-auto"
-              onClick={() => handleBookmark(_id)}
-            >
-              {isBookmarked ? (
-                <Icon icon={<BookmarkIcon />} />
-              ) : (
-                <Icon icon={<BookmarkAddOutlined />} />
-              )}
-            </ToolTipWrapper>
+            <StoryListItemBookmark
+              id={_id}
+              onClick={handleBookmark}
+              isBookmarked={isBookmarked}
+            />
           </div>
         </div>
 
-        <div className="ml-2 flex">
-          <Link
-            href={{
-              pathname: `/post/[id]`,
-              query: { id: _id },
-            }}
-            passHref
-          >
-            <div
-              className={cn(
-                'relative',
-                'h-[60px]',
-                'w-[60px]',
-                'md:h-[112px]',
-                'md:w-[112px]'
-              )}
-            >
-              <Image
-                src="/static/img/story.jpeg"
-                alt="image"
-                objectFit="cover"
-                layout="fill"
-              />
-            </div>
-          </Link>
-        </div>
+        <StoryListItemImage id={_id}>
+          <Image src="/static/img/story.jpeg" alt="image" fill />
+        </StoryListItemImage>
       </div>
     </div>
   )
